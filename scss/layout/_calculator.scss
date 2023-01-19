@@ -20,7 +20,7 @@
   }
 
   &__result {
-    font-size: clamp(2rem, 8vw, 3.35rem);
+    font-size: $fs-display;
   }
 
   &__operation {

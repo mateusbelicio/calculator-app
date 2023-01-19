@@ -10,23 +10,30 @@
   }
 
   &__select {
-    display: flex;
-    align-items: center;
-    padding: 0.25rem;
-    border-radius: 3rem;
-    background-color: var(--clr-primary-500);
+    fieldset {
+      display: flex;
+      align-items: center;
+      padding: 0.25rem;
+      border-radius: 3rem;
+      background-color: var(--clr-primary-500);
+      border: none;
+      width: fit-content;
+    }
   }
 
-  &__button {
-    color: currentColor;
+  &__input {
+    appearance: none;
     height: 1.125rem;
-    aspect-ratio: 1;
+    width: 1.125rem;
     border-radius: 50%;
+    color: currentColor;
+    cursor: pointer;
 
     counter-increment: btn;
     position: relative;
+    transition: all 0.2s;
 
-    &[aria-selected='true'] {
+    &:checked {
       background-color: var(--clr-accent-400);
     }
 

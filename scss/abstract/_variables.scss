@@ -1,5 +1,5 @@
 $fs-key: clamp(2rem, 5vw, 2.5rem);
-$fs-display: 2.5rem;
+$fs-display: clamp(2rem, 8vw, 3.35rem);
 
 $border-radius: 0.625rem;
 

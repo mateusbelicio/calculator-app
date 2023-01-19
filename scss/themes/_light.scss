@@ -1,20 +1,24 @@
 // Theme 2
-@media (prefers-color-scheme: light) {
-  :root {
-    --clr-primary-400: #e6e6e6;
-    --clr-primary-500: #d1cccc;
-    --clr-primary-600: #ededed;
 
-    --clr-secondary-400: #377f86;
-    --clr-secondary-500: #1b5f65;
+.light {
+  --clr-primary-400: #e6e6e6;
+  --clr-primary-500: #d1cccc;
+  --clr-primary-600: #ededed;
 
-    --clr-accent-400: #ca5502;
-    --clr-accent-500: #893901;
+  --clr-secondary-400: #377f86;
+  --clr-secondary-500: #1b5f65;
 
-    --clr-tertiary-400: #e5e4e1;
-    --clr-tertiary-500: #a69d91;
+  --clr-accent-400: #ca5502;
+  --clr-accent-500: #893901;
 
-    --clr-text-300: #ffffff;
-    --clr-text-400: #35352c;
+  --clr-tertiary-400: #e5e4e1;
+  --clr-tertiary-500: #a69d91;
+
+  --clr-text-300: #ffffff;
+  --clr-text-400: #35352c;
+  --clr-text-500: #ffffff;
+
+  body {
+    color: var(--clr-text-400);
   }
 }

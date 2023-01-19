@@ -24,14 +24,14 @@
     background-color: var(--clr-secondary-400);
     box-shadow: 0 4px 0 0 var(--clr-secondary-500);
     color: var(--clr-text-300);
-    font-size: 1.25rem;
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
   }
 
   &--equals {
     background-color: var(--clr-accent-400);
     box-shadow: 0 4px 0 0 var(--clr-accent-500);
-    color: var(--clr-text-300);
-    font-size: 1.25rem;
+    color: var(--clr-text-500, --clr-text-300);
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
   }
 
   &--big {
