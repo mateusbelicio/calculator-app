@@ -1,0 +1,42 @@
+.calculator {
+  grid-column: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  &__display {
+    background-color: var(--clr-primary-600);
+    border-radius: $border-radius;
+    color: currentColor;
+    text-align: right;
+
+    height: clamp(5.5rem, 23.7vw, 8rem);
+    padding: 1rem 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  &__result {
+    font-size: clamp(2rem, 8vw, 3.35rem);
+  }
+
+  &__operation {
+    font-size: clamp(0.9rem, 3.5vw, 1.5rem);
+    opacity: 0.75;
+  }
+
+  &__keyboard {
+    background-color: var(--clr-primary-500);
+    padding: clamp(1.5rem, 3.5vw, 2rem);
+    border-radius: $border-radius;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(3.75rem, 1fr));
+    grid-auto-rows: 3.75rem;
+    align-items: center;
+    gap: clamp(0.8125rem, 3vw, 1.5625rem);
+  }
+}

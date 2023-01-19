@@ -1,0 +1,43 @@
+.themes {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  font-size: 0.75rem;
+
+  &__title {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  &__select {
+    display: flex;
+    align-items: center;
+    padding: 0.25rem;
+    border-radius: 3rem;
+    background-color: var(--clr-primary-500);
+  }
+
+  &__button {
+    color: currentColor;
+    height: 1.125rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+
+    counter-increment: btn;
+    position: relative;
+
+    &[aria-selected='true'] {
+      background-color: var(--clr-accent-400);
+    }
+
+    &::before {
+      content: counter(btn);
+      position: absolute;
+      font-weight: 600;
+
+      top: -0.5rem;
+      left: 50%;
+      transform: translate(-50%, -100%);
+    }
+  }
+}

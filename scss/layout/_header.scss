@@ -1,0 +1,13 @@
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+
+  grid-column: center;
+  color: currentColor;
+  margin-bottom: 2rem;
+
+  &__title {
+    font-size: 2rem;
+  }
+}

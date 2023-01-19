@@ -1,0 +1,40 @@
+.key {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: $fs-key;
+  color: var(--clr-text-400);
+  height: calc(100% - 4px);
+
+  background-color: var(--clr-tertiary-400);
+  box-shadow: 0 4px 0 0 var(--clr-tertiary-500);
+  border-radius: $border-radius;
+
+  transition: box-shadow 0.1s, transform 0.1s;
+
+  &:active {
+    box-shadow: none;
+    transform: translateY(4px);
+  }
+
+  &:hover {
+    filter: brightness(115%);
+  }
+
+  &--secondary {
+    background-color: var(--clr-secondary-400);
+    box-shadow: 0 4px 0 0 var(--clr-secondary-500);
+    color: var(--clr-text-300);
+    font-size: 1.25rem;
+  }
+
+  &--equals {
+    background-color: var(--clr-accent-400);
+    box-shadow: 0 4px 0 0 var(--clr-accent-500);
+    color: var(--clr-text-300);
+    font-size: 1.25rem;
+  }
+
+  &--big {
+    grid-column: span 2;
+  }
+}
