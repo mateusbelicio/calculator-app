@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/style.css">
 
     <title>Frontend Mentor | Calculator app</title>
+
+    <script src="js/main.js" defer></script>
   </head>
   <body>
 
@@ -16,17 +18,21 @@
       <h1 class="header__title">calc</h1>
       <div class="themes">
         <span class="themes__title">Theme</span>
-        <div class="themes__select">
-          <button class="themes__button" data-value="dark" aria-selected="true">
-            <span class="sr-only">Select theme dark</span>
-          </button>
-          <button class="themes__button" data-value="light" aria-selected="false">
-            <span class="sr-only">Select theme light</span>
-          </button>
-          <button class="themes__button" data-value="colorful" aria-selected="false">
-            <span class="sr-only">Select theme colorful</span>
-          </button>
-        </div>
+
+        <form action="#" class="themes__select">
+          <fieldset>
+            <legend class="vs-hidden">Pick a color scheme</legend>
+
+            <label for="dark" class="theme__button vs-hidden">Dark</label>
+            <input type="radio" class="themes__input" name="theme" id="dark">
+            
+            <label for="light" class="theme__button vs-hidden">Light</label>
+            <input type="radio" class="themes__input" name="theme" id="light">
+            
+            <label for="colorful" class="theme__button vs-hidden">Colorful</label>
+            <input type="radio" class="themes__input" name="theme" id="colorful">
+          </fieldset>
+        </form>
       </div>
     </header>
 
