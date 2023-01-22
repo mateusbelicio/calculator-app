@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,7 +10,7 @@
 
     <title>Frontend Mentor | Calculator app</title>
 
-    <script src="js/main.js" defer></script>
+    <script type="module" src="js/controller.js"></script>
   </head>
   <body>
 
@@ -38,28 +38,28 @@
 
     <main class="calculator">
       <div class="calculator__display">
-        <span class="calculator__operation"></span>
+        <span class="calculator__operand"></span>
         <span class="calculator__result">0</span>
       </div>
 
       <div class="calculator__keyboard">
-        <button class="key">7</button>
-        <button class="key">8</button>
-        <button class="key">9</button>
-        <button class="key key--secondary">del</button>
-        <button class="key">4</button>
-        <button class="key">5</button>
-        <button class="key">6</button>
-        <button class="key">&plus;</button>
-        <button class="key">1</button>
-        <button class="key">2</button>
-        <button class="key">3</button>
-        <button class="key">&minus;</button>
-        <button class="key">.</button>
-        <button class="key">0</button>
-        <button class="key">/</button>
-        <button class="key">&times;</button>
-        <button class="key key--secondary key--big">reset</button>
+        <button class="key key--number">7</button>
+        <button class="key key--number">8</button>
+        <button class="key key--number">9</button>
+        <button class="key key--delete key--secondary">del</button>
+        <button class="key key--number">4</button>
+        <button class="key key--number">5</button>
+        <button class="key key--number">6</button>
+        <button class="key key--operation">&plus;</button>
+        <button class="key key--number">1</button>
+        <button class="key key--number">2</button>
+        <button class="key key--number">3</button>
+        <button class="key key--operation">&minus;</button>
+        <button class="key key--number">.</button>
+        <button class="key key--number">0</button>
+        <button class="key key--operation">&divide;</button>
+        <button class="key key--operation">&times;</button>
+        <button class="key key--reset key--secondary key--big">reset</button>
         <button class="key key--equals key--big">&equals;</button>
       </div>
     </main>

@@ -171,7 +171,7 @@ body {
   gap: clamp(0.8125rem, 3vw, 1.5625rem);
 }
 
-.colorful {
+html[data-theme=colorful] {
   --clr-primary-400: #160628;
   --clr-primary-500: #1d0934;
   --clr-primary-600: #1d0934;
@@ -185,11 +185,11 @@ body {
   --clr-text-400: #ffe53d;
   --clr-text-500: #1b2428;
 }
-.colorful body {
+html[data-theme=colorful] body {
   color: var(--clr-text-400);
 }
 
-.dark {
+html[data-theme=dark] {
   --clr-primary-400: #3a4764;
   --clr-primary-500: #232c43;
   --clr-primary-600: #182034;
@@ -202,11 +202,11 @@ body {
   --clr-text-300: #ffffff;
   --clr-text-400: #444b5a;
 }
-.dark body {
+html[data-theme=dark] body {
   color: var(--clr-text-300);
 }
 
-.light {
+html[data-theme=light] {
   --clr-primary-400: #e6e6e6;
   --clr-primary-500: #d1cccc;
   --clr-primary-600: #ededed;
@@ -220,7 +220,7 @@ body {
   --clr-text-400: #35352c;
   --clr-text-500: #ffffff;
 }
-.light body {
+html[data-theme=light] body {
   color: var(--clr-text-400);
 }
 
