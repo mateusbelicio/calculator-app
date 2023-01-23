@@ -3,6 +3,7 @@ class Calculator {
   _operation;
   _previousValue;
   _currentValue;
+  _isAfterEqualsPressed = false;
 
   // Keys
   numberKeys = document.querySelectorAll('.key--number');
@@ -12,31 +13,41 @@ class Calculator {
   resetKey = document.querySelector('.key--reset');
 
   // Display screen
-  _displayResult = document.querySelector('.calculator__result');
-  _displayOperand = document.querySelector('.calculator__operand');
+  _currentElDisplay = document.querySelector('.calculator__result');
+  _previusElDisplay = document.querySelector('.calculator__operand');
 
   constructor() {
     this.clear();
   }
 
   clear() {
-    this._currentValue = '';
+    this._currentValue = '0';
     this._previousValue = '';
     this._operation = undefined;
-    this._displayResult.textContent = '0';
   }
 
   delete() {
-    this._currentValue = this._currentValue.toString().slice(0, -1);
+    if (!this._isAfterEqualsPressed)
+      this._currentValue = this._currentValue.toString().slice(0, -1);
+    else {
+      this._currentValue = '0';
+      this._isAfterEqualsPressed = false;
+    }
   }
 
   insertNumber(number) {
-    if (number === '.' && this._currentValue.includes('.')) return;
+    if (number === '.' && this._currentValue.toString().includes('.') && !this._isAfterEqualsPressed) return;
     if (this._currentValue.length >= this._MAX_DIGITS) return;
-    this._currentValue = this._currentValue.toString() + number.toString();
+
+    if (this._isAfterEqualsPressed) {
+      this._currentValue = number;
+      this._isAfterEqualsPressed = false;
+    } else {
+      this._currentValue = this._currentValue.toString() + number.toString();
+    }
   }
 
-  compute() {
+  compute(equalsKeyPressed = false) {
     let result;
     const previous = parseFloat(this._previousValue);
     const current = parseFloat(this._currentValue);
@@ -63,17 +74,20 @@ class Calculator {
     this._currentValue = result;
     this._previousValue = '';
     this._operation = undefined;
+    this._isAfterEqualsPressed = equalsKeyPressed;
   }
 
   updateOperation(operation) {
     if (this._currentValue === '') return;
-    if (this._previousValue !== '') {
-      this.compute();
+    if (this._operation && this._currentValue === '0') { 
+      this._operation = operation;
+      return;
     }
-
+    if (this._previousValue !== '') this.compute();
+    
     this._operation = operation;
     this._previousValue = this._currentValue;
-    this._currentValue = '';
+    this._currentValue = '0';
   }
 
   convertDisplayNumber(number) {
@@ -83,7 +97,7 @@ class Calculator {
 
     let integerDisplay;
     if (isNaN(integerDigits)) {
-      integerDisplay = '';
+      integerDisplay = '0';
     } else {
       integerDisplay = integerDigits.toLocaleString('en', { maximumFractionDigits: 0 });
     }
@@ -96,12 +110,12 @@ class Calculator {
   }
 
   updateDisplay() {
-    this._displayResult.textContent = this.convertDisplayNumber(this._currentValue);
+    this._currentElDisplay.textContent = this.convertDisplayNumber(this._currentValue);
     if (this._operation) {
-      this._displayOperand.textContent = `
+      this._previusElDisplay.textContent = `
         ${this.convertDisplayNumber(this._previousValue)} ${this._operation}`;
     } else {
-      this._displayOperand.textContent = '';
+      this._previusElDisplay.textContent = '';
     }
   }
 }
