@@ -38,6 +38,7 @@ class Calculator {
   insertNumber(number) {
     if (number === '.' && this._currentValue.toString().includes('.') && !this._isAfterEqualsPressed) return;
     if (this._currentValue.length >= this._MAX_DIGITS) return;
+    if(number === '0' && this._currentElDisplay.textContent === '0' && !this._currentValue.toString().includes('.')) return;
 
     if (this._isAfterEqualsPressed) {
       this._currentValue = number;
@@ -70,8 +71,16 @@ class Calculator {
       default:
         return;
     }
-
-    this._currentValue = result;
+    
+    result = result.toString()
+    if (result.length >= this._MAX_DIGITS) {
+      this._currentValue = parseFloat(result).toExponential(2);
+      if (this._currentValue.toString().slice(-1) === '0') 
+        this._currentValue = parseFloat(this._currentValue);
+    }
+    else
+      this._currentValue = result;
+    
     this._previousValue = '';
     this._operation = undefined;
     this._isAfterEqualsPressed = equalsKeyPressed;
@@ -110,13 +119,20 @@ class Calculator {
   }
 
   updateDisplay() {
-    this._currentElDisplay.textContent = this.convertDisplayNumber(this._currentValue);
+    const current = this.convertDisplayNumber(this._currentValue);
+
+    if (current === '∞') {
+      this._currentElDisplay.textContent = '\u2204';
+      this._currentValue = '';
+    } else this._currentElDisplay.textContent = current;
+
     if (this._operation) {
       this._previusElDisplay.textContent = `
         ${this.convertDisplayNumber(this._previousValue)} ${this._operation}`;
     } else {
       this._previusElDisplay.textContent = '';
     }
+
   }
 }
 
