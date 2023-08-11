@@ -1,19 +1,18 @@
-# Frontend Mentor - Calculator app solution
-
-![Design preview for the Calculator app coding challenge](./design/desktop-preview.jpg)
+<div align="center">
+  <img align="right" src="https://www.frontendmentor.io/static/images/logo-mobile.svg" alt="Frontendmentor icon" />
+  <h2 align="left">Frontend Mentor - Calculator app solution</h2>
+</div>
 
 This is a solution to the [Calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Table of contents
+<!-- ![My Profile](https://img.shields.io/badge/Status-building-blue?style=flat) -->
+![My Profile](https://img.shields.io/badge/Status-finished-green?style=flat)
+&dot;
+[![Status](https://img.shields.io/website?label=Website&down_color=inactive&down_message=offline&up_color=green&up_message=online&url=https%3A%2F%2Fmateusbelicio.github.io/calculator-app)](https://mateusbelicio.github.io/calculator-app) 
+&dot;
+[![My Profile](https://img.shields.io/badge/Profile-Mateus_Belicio-282C2E?style=flat&logo=frontendmentor)](https://www.frontendmentor.io/profile/mateusbelicio)
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-- [Author](#author)
-
-## Overview
+---
 
 ### The challenge
 
@@ -24,12 +23,11 @@ Users should be able to:
 - Adjust the color theme based on their preference
 - **Bonus**: Have their initial theme preference checked using `prefers-color-scheme` and have any additional changes saved in the browser
 
-### Links
+### Screenshot
 
-- 🔗 [Solution URL](https://github.com/mateusbelicio/calculator-app)
-- 🔗 [Live Site URL](https://mateusbelicio.github.io/calculator-app)
-
-## My process
+![dark theme preview](./public/preview-dark.png)
+![light theme preview](./public/preview-light.png)
+![color theme preview](./public/preview-color.png)
 
 ### Built with
 
@@ -38,7 +36,9 @@ Users should be able to:
 - CSS Grid
 - Mobile-first workflow
 
-## Author
+---
+
+### Author
 
 - Frontend Mentor - [@mateusbelicio](https://www.frontendmentor.io/profile/mateusbelicio)
 - Linkedin - [@mateusbelicio](https://www.linkedin.com/in/mateusbelicio)
